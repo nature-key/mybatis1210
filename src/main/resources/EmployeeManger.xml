@@ -9,6 +9,14 @@
         FROM tbl_employee
         WHERE id = #{id}
     </select>
+   <select id="getEmps" resultType="emp">
+       select *
+       from tbl_employee
+   </select>
 
+    <insert id="addEmp">
+
+        INSERT  INTO  tbl_employee("last_name","gender","email") VALUES (#{lastName},#{gender},#{email})
+    </insert>
 
 </mapper>

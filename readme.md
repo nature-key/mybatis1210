@@ -64,3 +64,17 @@ mybatis原理
     4.调用stamentHander 的增删改查方法
     5，resultSEThander封装结果
   每一个对想都有一个插件  
+  实现插件
+  
+  1.实现接口Interceptor
+  2.注解@Intercepts({
+              @Signature(type = StatementHandler.class,method ="parameterize" ,args = Statement.class )
+      })
+      
+  3.全局变量配置
+  <plugins>
+          <plugin interceptor="com.jiepi.dao.MyFirstPlugin">
+              <property name="username" value="root"></property>
+              <property name="password" value="123456"></property>
+          </plugin>
+      </plugins>    

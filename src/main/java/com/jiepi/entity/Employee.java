@@ -19,6 +19,13 @@ public class Employee implements Serializable{
 
     private Department department;
 
+    public Employee(String lastName, String gender, String email) {
+        this.lastName = lastName;
+        this.gender = gender;
+        this.email = email;
+//        this.department = department;
+    }
+
     public Employee(Integer id, String lastName, String gender, String email, Department department) {
         this.id = id;
         this.lastName = lastName;
